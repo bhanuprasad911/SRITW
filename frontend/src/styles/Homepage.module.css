@@ -1,0 +1,15 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+.links{
+    background: none;
+    border: 1px solid black;
+    padding: 1%;
+    cursor: pointer;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}

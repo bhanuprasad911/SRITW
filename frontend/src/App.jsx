@@ -1,9 +1,16 @@
 import React from 'react'
 import styles from './styles/App.module.css'
+import Homepage from './pages/Homepage.jsx'
+import { Routes, Route } from 'react-router'
 
 function App() {
   return (
-    <div>app</div>
+    <div className={styles.main}>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+      </Routes>
+
+    </div>
   )
 }
 

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    height: 10%;
+    width: 100%;
+    background-color: rgb(95,51,64);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    width: 60%;
+    padding-bottom:1% ;
+    padding-right: 3%;
+    gap: 5%;
+}
+.image{
+    height: 100%;
+    width: 30%;
+    background-color: white;
+}
