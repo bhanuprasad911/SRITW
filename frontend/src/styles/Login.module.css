@@ -1,6 +1,6 @@
 .main{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   height: 100%;
@@ -8,6 +8,7 @@
     background: url('../assets/backgroumd.png');
     background-size: cover;
     background-repeat: no-repeat;
+  gap: 10%;
     
 }
 .master{
@@ -47,13 +48,22 @@
 
 @media screen and (max-width:500px){
     .master{
-        width: 50%;
+        width: 80%;
         height: 50%;
     }
-    
+    .logo{
+        height: 30%;
+    }
 }
 
 @media screen and (min-width:501px) and (max-width:700px){
+    .master{
+        width: 50%;
+        height: 55%;
+    }
+    
+}
+@media screen and (min-width:702px) and (max-width:1000px){
     .master{
         width: 50%;
         height: 55%;
