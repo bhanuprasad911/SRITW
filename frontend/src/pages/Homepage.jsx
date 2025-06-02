@@ -17,9 +17,20 @@ function Homepage() {
           </button>
             
         </Navbar>
+        <div className={styles.section}>
+          <div className={styles.abs}>
+            <div className={styles.tags}>
+
+            <h1 className={styles.heading}>Sumathi Reddy Institute Of Technology For Women</h1>
+            <p className={styles.tag}>Bringing thoughts into actions, ideas into solutions</p>
+            </div>
+            <div className={styles.titleDiv}>
+              <h1 className={styles.title}>Result Management System</h1>
+            </div>
+          </div>
+        </div>
       
     </div>
-  )
-}
+  )}
 
 export default Homepage
