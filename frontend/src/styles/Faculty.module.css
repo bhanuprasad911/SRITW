@@ -1,0 +1,15 @@
+.main{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.navbutton{
+    padding: 7px;
+    border-radius: 7px;
+    
+}
+.navbutton:hover{
+    cursor: pointer;
+}
+
