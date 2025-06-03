@@ -1,0 +1,50 @@
+{
+  "id": "20951A1202",
+  "cie11s": ["Hindi", "English", "Maths", "Science"],
+  "cie11m": [50, 40, 60, 50],
+
+  "cie12s": ["Hindi", "English", "Maths", "Science"],
+  "cie12m": [50, 40, 60, 50],
+
+  "cie21s": ["Hindi", "English", "Maths", "Science"],
+  "cie21m": [50, 40, 60, 50],
+
+  "cie22s": ["Hindi", "English", "Maths", "Science"],
+  "cie22m": [50, 40, 60, 50],
+
+  "cie31s": ["Hindi", "English", "Maths", "Science"],
+  "cie31m": [50, 40, 60, 50],
+
+  "cie32s": ["Hindi", "English", "Maths", "Science"],
+  "cie32m": [50, 40, 60, 50],
+
+  "cie41s": ["Hindi", "English", "Maths", "Science"],
+  "cie41m": [50, 40, 60, 50],
+
+  "cie42s": ["Hindi", "English", "Maths", "Science"],
+  "cie42m": [50, 40, 60, 50],
+
+  "see1s": ["Hindi", "English", "Maths", "Science"],
+  "see1m": [50, 40, 60, 50],
+
+  "see2s": ["Hindi", "English", "Maths", "Science"],
+  "see2m": [50, 40, 60, 50],
+
+  "see3s": ["Hindi", "English", "Maths", "Science"],
+  "see3m": [50, 40, 60, 50],
+
+  "see4s": ["Hindi", "English", "Maths", "Science"],
+  "see4m": [50, 40, 60, 50],
+
+  "see5s": ["Hindi", "English", "Maths", "Science"],
+  "see5m": [50, 40, 60, 50],
+
+  "see6s": ["Hindi", "English", "Maths", "Science"],
+  "see6m": [50, 40, 60, 50],
+
+  "see7s": ["Hindi", "English", "Maths", "Science"],
+  "see7m": [50, 40, 60, 50],
+  
+  "see8s": ["Hindi", "English", "Maths", "Science"],
+  "see8m": [50, 40, 60, 50]
+}

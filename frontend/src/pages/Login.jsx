@@ -29,7 +29,7 @@ const handleChange=(e)=>{
             <img src={sritw} alt="" className={styles.logo}/>
             <p className={styles.loginCaption}>Student/Faculty Login</p>
             <input type="text" placeholder="Username" value={formdata.id} name='id' onChange={(e)=>handleChange(e)}/>
-            <input type="text"  placeholder="Password" value={formdata.password} name='password' onChange={(e)=>handleChange(e)}/>
+            <input type="password"  placeholder="Password" value={formdata.password} name='password' onChange={(e)=>handleChange(e)}/>
             <button className={styles.submit} onClick={handleSubmit}>Submit</button>
             </div>
        

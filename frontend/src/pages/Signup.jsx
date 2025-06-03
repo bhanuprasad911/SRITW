@@ -2,7 +2,18 @@ import styles from '../styles/Signup.module.css'
 import React from 'react'
 import sritw from '/logo3.png'
 import { useState } from 'react'
+import { signup } from '../services/libs'
+
 function Signup() {
+  const [formdata, setFormData] = useState({
+    id:"",
+    name:"",
+    branch:"",
+    batch:"",
+    year:"",
+    sem:"",
+    password:""
+  })
 const batches = [
   "2021-2025",
   "2022-2026",
@@ -40,8 +51,7 @@ const batches = [
 ];
 
 const years = [
-  "2020", "2021", "2022", "2023", "2024",
-  "2025", "2026", "2027", "2028", "2029"
+  "1","2","3","4"
 ];
 const semesters = [
   "Sem-1",
@@ -54,6 +64,17 @@ const semesters = [
   "Sem-8"
 ];
 
+const handleChange=(e)=>{
+  setFormData({...formdata, [e.target.name]: e.target.value});
+
+}
+const handleSubmit = async()=>{
+  console.log(formdata)
+  const response = await signup(formdata)
+  console.log(response)
+
+}
+
 
 
 
@@ -63,40 +84,44 @@ const semesters = [
         <div className={styles.master}>
             <img src={sritw} alt="" className={styles.logo}/>
             <p className={styles.signupCaption}>Student Signup</p>
-            <input type="text" placeholder='Roll Number'/>
-            <input type="text" placeholder='Name' />
+            <input type="text" placeholder='Roll Number'name='id' onChange={(e)=>{
+              handleChange(e)
+            }}/>
+            <input type="text" placeholder='Name' name='name' onChange={(e)=>{
+              handleChange(e)
+            }}/>
 
             <div className={styles.batchbranch}>
-            <select name="Batch" id="" placeholder='Batch'>
-                <option value="" disabled> Select Your Batch</option>
+            <select name="batch" id="" placeholder='Batch' onChange={(e)=>handleChange(e)}>
+                <option value=""> Select Your Batch</option>
                 {batches.map((batch,index)=>{
                     return <option key={index} value={batch}>{batch}</option>
                 })}
             </select>
-            <select name="Branch" id="" placeholder='Branch'>
-                <option value="" disabled>Select Your Branch</option>
+            <select name="branch" id="" placeholder='Branch' onChange={(e)=>handleChange(e)}>
+                <option value="" >Select Your Branch</option>
                 {btechBranches.map((branch,index)=>{
                    return <option key={index} value={branch}>{branch}</option>
                 })}
             </select>
             </div>  
             <div className={styles.yearsem}>
-            <select name="Year" id="">
-                <option value="" disabled>Select Your Year</option>
+            <select name="year" id="" onChange={(e)=>handleChange(e)}>
+                <option value="" >Select Your Year</option>
                 {years.map((year,index)=>{
                    return <option key={index} value={year}>{year}</option>
                 })}
             </select>
-            <select name="Sem" id="">
-                <option value="" disabled> Select Your Semester</option>
+            <select name="sem" id="" onChange={(e)=>handleChange(e)}>
+                <option value=""> Select Your Semester</option>
                 {semesters.map((sem,index)=>{
                     return <option key={index} value={sem}>{sem}</option>
                 })}
             </select>
             </div>
 
-            <input type="password" name="Password" id="" placeholder='Password'/>
-            <button className={styles.signUp}>Signup</button>
+            <input type="password" name="password" id="" placeholder='Password' onChange={(e)=>handleChange(e)}/>
+            <button className={styles.signUp} onClick={handleSubmit}>Signup</button>
         </div>
     </div>
   )

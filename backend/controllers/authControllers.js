@@ -73,5 +73,7 @@ export const me = async (req, res) => {
   } catch (error) {
     console.log("Error while getting user");
     console.log(error.message);
+        return res.status(500).json({message: 'Internal Server Error'})
+
   }
 };
