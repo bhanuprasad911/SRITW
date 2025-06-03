@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import dbConnection from '../src/configs/dbConnection.js'
 import authRouter from '../routes/auth.route.js'; 
 import marksRouter from '../routes/marks.routes.js';
+import studentRouter from '../routes/student.route.js';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRouter);
 app.use('/api/marks', marksRouter);
+app.use('/api/student', studentRouter);
 
 
 const PORT = process.env.PORT || 5000;
