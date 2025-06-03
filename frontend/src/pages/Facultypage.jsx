@@ -48,8 +48,8 @@
 
 
 async function handlemarks() {
-    const cienames = 'cie' + seminput + cieinput + 's'; // e.g., cie11s
-    const cienamem = 'cie' + seminput + cieinput + 'm'; // e.g., cie11m
+    const cienames = 'cie' + seminput + cieinput + 's'; 
+    const cienamem = 'cie' + seminput + cieinput + 'm'; 
 
     const marksEntry = {
         [cienames]: [subinput],
