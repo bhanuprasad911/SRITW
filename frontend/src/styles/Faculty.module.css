@@ -7,10 +7,19 @@
 .navbutton{
     padding: 7px;
     border-radius: 7px;
-    
 }
-.navbutton:hover{
+.profile{
+    padding: 7px;
+    border-radius: 7px;
+    width: max-content;
+}
+
+
+
+
+.navbutton:hover,.profile:hover{
     cursor: pointer;
+    transform: scale(1.05);
 }
 .master
 {
@@ -43,6 +52,7 @@
     border: 2px solid gray;
     padding: 5px;
     border-radius: 5px;
+    
 }
 
 .details{
@@ -65,4 +75,75 @@ table{
 
 tr,td{
     text-align: center;
+}
+
+.marksentry{
+   display: flex;
+   flex-direction: column;
+   gap: 2%;
+    width: 100%;
+    height: 90%;
+
+}
+.selectedstudent{
+    display: flex;
+   border: 2px solid;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+}
+.selectedstudent > div {
+    color: aliceblue;
+    padding: 7px;
+    background-color: gray;
+    border-radius: 10px;
+}
+.wrongStudent,.addMarks{
+    padding: 8px;
+    width: 5%;
+    position: relative;
+    left: 90%;
+    border: none;
+    background: none;
+    background-color: #5f3340;
+    color:white;
+    border-radius: 10px;
+}
+.wrongStudent:hover,.selectTableStudent:hover,.addMarks:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.addMarks{
+    width: 6%;
+    padding: 8px;
+}
+.marksDiv{
+    width: 100%;
+    height: 10%;
+}
+
+.facultyinput{
+   border: 2px solid black;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.facultyinput > select,.facultyinput > input{
+    
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+.facultyinput > button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(94, 51, 64);
+    color: white;
+}
+.facultyinput > button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }

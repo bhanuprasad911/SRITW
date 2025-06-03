@@ -9,6 +9,12 @@ export const signup = async (data) => {
   return response;
 };
 export const getAllStudents = async () =>{
-    const response = await axiosInstance.get("/student/");
+  try {
+    
+    const response = await axiosInstance.get("/student");
     return response;
+  } catch (error) {
+    console.log(error)
+    
+  }
 }
