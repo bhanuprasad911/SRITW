@@ -4,10 +4,10 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import dbConnection from '../src/configs/dbConnection.js'
-import authRouter from '../routes/auth.route.js'; 
-import marksRouter from '../routes/marks.routes.js';
-import studentRouter from '../routes/student.route.js';
+import dbConnection from './configs/dbConnection.js'
+import authRouter from './routes/auth.route.js'; 
+import marksRouter from './routes/marks.routes.js';
+import studentRouter from './routes/student.route.js';
 
 const app = express();
 
