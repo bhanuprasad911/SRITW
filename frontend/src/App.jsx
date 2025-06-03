@@ -47,7 +47,7 @@ function App() {
               currentAdmin.type === "admin" ? (
                 <AdminPage setUser={setCurrentAdmin} />
               ) : currentAdmin.type === "lecturer" ? (
-                <Facultypage />
+                <Facultypage setUser={setCurrentAdmin} />
               ) : currentAdmin.type === "student" ? (
                 <StudentPage />
               ) : (
