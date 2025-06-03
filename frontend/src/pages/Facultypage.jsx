@@ -4,6 +4,7 @@
     import { useNavigate } from 'react-router';
     import {getAllStudents} from '../services/libs.js'
     import { FaUserCircle } from "react-icons/fa";
+    import toast from 'react-hot-toast';
 
     function Facultypage() {
     const facultyData={
@@ -57,6 +58,13 @@ async function handlemarks() {
     };
 
     console.log("Marks Entry:", marksEntry);
+
+    toast.success('Marks Entered Sucesfully',{
+        duration:4000,
+        position:'top-center'
+    })
+    setStudentId([])
+    localStorage.clear()
     
 }
 

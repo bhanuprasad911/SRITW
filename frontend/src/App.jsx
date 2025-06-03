@@ -8,6 +8,8 @@ import Facultypage from "./pages/Facultypage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import StudentPage from "./pages/StudentPage.jsx";
 import { getAuthUser } from "./services/libs.js";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function App() {
   const [currentAdmin, setCurrentAdmin] = useState(() => {
@@ -36,6 +38,7 @@ function App() {
 
   return (
     <div className={styles.main}>
+    <Toaster />
       <Routes>
         <Route
           path="/"
@@ -43,7 +46,7 @@ function App() {
             current ? (
               currentAdmin.type === "admin" ? (
                 <AdminPage setUser={setCurrentAdmin} />
-              ) : currentAdmin.type === "faculty" ? (
+              ) : currentAdmin.type === "lecturer" ? (
                 <Facultypage />
               ) : currentAdmin.type === "student" ? (
                 <StudentPage />
