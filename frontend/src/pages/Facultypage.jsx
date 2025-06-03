@@ -5,7 +5,7 @@
     import {getAllStudents} from '../services/libs.js'
     import { FaUserCircle } from "react-icons/fa";
 
-    function Facultypage() {
+    function Facultypage({setUser}) {
     const facultyData={
   "id": "F12345",
   "name": "Gampa Srujankumar",
@@ -76,6 +76,11 @@ async function handlemarks() {
         }
     }
 
+    const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem('currentUser');
+  };
+
 
 
     useEffect(()=>{
@@ -99,7 +104,7 @@ async function handlemarks() {
         <div className={styles.main}>
         <Navbar>
             <button className={styles.profile}  onClick={() => navigate('profile')}> <FaUserCircle /> {facultyData.name}</button>
-            <button className={styles.navbutton} onClick={() => navigate('/login')}>Logout</button>
+            <button className={styles.navbutton} onClick={handleLogout}>Logout</button>
         </Navbar>
 
         <div className={styles.master}>

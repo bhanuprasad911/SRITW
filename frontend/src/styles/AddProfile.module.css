@@ -51,6 +51,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
+
 }
 .cancel{
     width: 40%;
@@ -62,6 +64,7 @@
     font-size: large;
     color: white;
     color: black;
+    cursor: pointer;
 }
 .error{
     color: red;
@@ -71,4 +74,12 @@
 .increaseHeight{
     height: 60%;
 }
+@media screen and (max-width: 650px) {
+    .main{
+        width: 90%;
+    }
+   
+    
+}
+
 
