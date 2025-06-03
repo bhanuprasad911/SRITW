@@ -9,12 +9,16 @@ export const signup = async (data) => {
   return response;
 };
 export const getAllStudents = async () =>{
-  try {
+ 
     
     const response = await axiosInstance.get("/student");
     return response;
-  } catch (error) {
-    console.log(error)
-    
-  }
+}
+export const getAuthUser = async () =>{
+  const response = await axiosInstance.get("/auth/me");
+  return response;
+}
+export const logout = async () =>{
+  const response = await axiosInstance.get("/auth/logout");
+  return response;
 }
