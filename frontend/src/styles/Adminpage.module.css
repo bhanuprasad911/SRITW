@@ -1,84 +1,134 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.main{
-    height: 100%;
-    width: 100%;
-
-
+.main {
+  height: 100%;
+  width: 100%;
 }
-.loading{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }
-.userDiv{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+.userDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
   width: auto;
   gap: 10px;
   padding: 0.6rem 1rem;
   cursor: pointer;
 }
-.username{
-    color: white;
-    font-size: medium;
+.username {
+  color: white;
+  font-size: medium;
 }
-.addFaculty{
-    color: white;
-    background: none;
-    border: none;
-    border: 1px solid black;
-    padding: 1rem;
-    font-size: medium;
-    cursor: pointer;
+.addFaculty {
+  color: white;
+  background: none;
+  border: none;
+  border: 1px solid black;
+  padding: 1rem;
+  font-size: medium;
+  cursor: pointer;
 }
-.mainBody{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 90%;
-    gap: 3%;
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90%;
+  gap: 3%;
 }
-.filtersDiv{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 8%;
-    /* border: 1px solid black; */
+.filtersDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 8%;
+  /* border: 1px solid black; */
 }
-.filtersDiv>select{
-    padding: 0.5rem;
-    height: 80%;
-    width: 15%;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-size: large;
-   
+.filtersDiv > select {
+  padding: 0.5rem;
+  height: 80%;
+  width: 15%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: large;
 }
-.filtersDiv input{
-    height: 80%;
-    width: 15%;
-    background-color: rgb(230, 230, 230);
-    color: black;
-    border: 2px solid black;
-    outline: none;
-       border-radius: 10px;
-    font-size: large;
-    padding: 0.5rem;
+.filtersDiv input {
+  height: 80%;
+  width: 15%;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 10px;
+  font-size: large;
+  padding: 0.5rem;
+}
+.tableDiv {
+  width: 100%;
+  height: 60%;
+  overflow: auto;
+}
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
 
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.thead {
+  background-color: grey;
+  color: white;
+  padding: 10px 15px;
+}
+
+.tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.td {
+  padding: 10px 15px;
+  text-align: left;
+  text-align: center;
+}
+
+.tr:hover {
+  background-color: #f2f2f2;
+}
+.cancel {
+  width: 10%;
+  height: 80%;
+  padding: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: large;
+  color: white;
+  color: black;
+  cursor: pointer;
+}
+.create {
+  width: 10%;
+  height: 80%;
+  padding: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(95, 51, 64);
+  font-size: large;
+  color: white;
 }

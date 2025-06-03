@@ -111,9 +111,10 @@ function AdminPage({ setUser }) {
             placeholder="Search by name or ID"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            
           />
-          <button onClick={handleSearch}>Search</button>
-          <button onClick={() => {
+          <button className={styles.create} onClick={handleSearch}>Search</button>
+          <button className={styles.cancel} onClick={() => {
             setStudents(allStudents);
             setBatch('');
             setYear('');
@@ -122,9 +123,10 @@ function AdminPage({ setUser }) {
             setSearch('');
           }}>Reset</button>
         </div>
-      <table>
-  <thead>
-    <tr>
+        <div className={styles.tableDiv}>
+            <table className={styles.table}>
+  <thead className={styles.thead}>
+    <tr className={styles.tr}>
       <th>Roll No</th>
       <th>Name</th>
       <th>Branch</th>
@@ -136,18 +138,22 @@ function AdminPage({ setUser }) {
   <tbody>
     {!addProfile && students.length > 0 &&
       students.map((student, index) => (
-        <tr key={index}>
-          <td>{student.id}</td>
-          <td>{student.name}</td>
-          <td>{student.branch}</td>
-          <td>{student.batch}</td>
-          <td>{student.year}</td>
-          <td>{student.sem}</td>
+        <tr className={styles.tr} key={index}>
+          <td className={styles.td}>{student.id}</td>
+          <td className={styles.td}>{student.name}</td>
+          <td className={styles.td}>{student.branch}</td>
+          <td className={styles.td}>{student.batch}</td>
+          <td className={styles.td}>{student.year}</td>
+          <td className={styles.td}>{student.sem}</td>
         </tr>
       ))
     }
   </tbody>
 </table>
+
+        </div>
+    
+
 
 
         {addProfile && <AddProfile setShow={setAddProfile} />}
