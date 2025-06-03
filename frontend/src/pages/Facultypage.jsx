@@ -53,6 +53,7 @@ async function handlemarks() {
     const cienamem = 'cie' + seminput + cieinput + 'm'; 
 
     const marksEntry = {
+        id:studentId.id,
         [cienames]: [subinput],
         [cienamem]: [mark]  
     };
