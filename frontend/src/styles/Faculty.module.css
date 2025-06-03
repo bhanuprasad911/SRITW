@@ -12,4 +12,57 @@
 .navbutton:hover{
     cursor: pointer;
 }
+.master
+{
+    display: flex;
+    flex-direction: column;
+    /* border: 10px solid yellow; */
+    width: 100%;
+    height: 90%;
+    gap: 2%;
+}
+.filter{
+ border: 2px solid gray;
+ height: 8%;   
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ padding: 5px;
+ gap: 2%;
 
+}
+
+.filter > select,.filter > input{
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.filter > button{
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.details{
+    /* border: 2px solid red; */
+    height: 92%;
+    overflow: auto;
+}
+.eachstudnet{
+    display: flex;
+    justify-content: space-around;
+}
+table,tr,th,td{
+    border-bottom: 1px solid;
+    
+}
+
+table{
+    width: 100%;
+}
+
+tr,td{
+    text-align: center;
+}
