@@ -12,3 +12,11 @@ export const getAllStudents = async () =>{
     const response = await axiosInstance.get("/student/");
     return response;
 }
+export const getAuthUser = async () =>{
+  const response = await axiosInstance.get("/auth/me");
+  return response;
+}
+export const logout = async () =>{
+  const response = await axiosInstance.get("/auth/logout");
+  return response;
+}

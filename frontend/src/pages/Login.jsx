@@ -4,10 +4,16 @@ import React from 'react'
 
 import sritw from '/logo3.png'
 import { useState } from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar.jsx'
+import { login } from '../services/libs.js'
+import { useNavigate } from 'react-router'
 
 
-function Login() {
+
+
+function Login({setUser}) {
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const [formdata, setFormdata] = useState({
     id: '',
@@ -16,14 +22,27 @@ function Login() {
 const handleChange=(e)=>{
   setFormdata({...formdata,[e.target.name]:e.target.value})
 }
-    function handleSubmit(){
-      console.log(formdata)
+    const handleSubmit= async()=>{
+      const response =await login(formdata)
+      console.log(response)
+      if(response.status===200){
+        localStorage.setItem('currentUser', JSON.stringify(response.data.data))
+        setUser(response.data.data)
+        navigate('/')
+        return
+        
+      }
+      setError(response.data.message)
         
     }
   return (
     
     <div className={styles.main}>
       <Navbar />
+      {
+        error.length>0 &&
+        <p>{error}</p>
+      }
            
             <div className={styles.master}>
             <img src={sritw} alt="" className={styles.logo}/>

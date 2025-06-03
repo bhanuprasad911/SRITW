@@ -1,14 +1,30 @@
+import Admin from "../models/Admin.model.js";
+import Lecturer from "../models/Lecturer.model.js";
 import Student from "../models/Student.model.js";
+
 import jwt from "jsonwebtoken";
 const secret = process.env.SECRET;
 
 const authMiddleWare = async (req, res, next) => {
   try {
+    console.log(req.cookies.token)
     const token = req.cookies.token;
-    if (!token) return res.status(401).json({ message: "Unauthorized" });
+    console.log(Boolean(token))
+    if (!token) {return res.status(401).json({ message: "Unauthorized" });}
     const decoded = jwt.verify(token, secret);
-    const user = await Student.findOne({id:decoded.id}).select("-password");
-    if (!user) {
+    const {id,type} = decoded;
+    console.log(decoded)
+   
+    let user = null;
+
+    if (type === 'admin') {
+      user = await Admin.findOne({ id }).select("-password");
+    } else if (type === 'lecturer') {
+      user = await Lecturer.findOne({ id }).select("-password");
+    } else if (type === 'student') {
+      user = await Student.findOne({ id }).select("-password");
+    }
+     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
     req.user = user;

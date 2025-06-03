@@ -11,7 +11,7 @@ export const signup = async (req, res) => {
     if (type === "student") {
       const exist = await Student.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Student already exists" });
+        return res.status(400).json({ message: "Student with this id already exists" });
       }
       const student = new Student({
         id,
@@ -30,7 +30,7 @@ export const signup = async (req, res) => {
     } else if (type === "admin") {
       const exist = await Admin.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Admin already exists" });
+        return res.status(400).json({ message: "Admin with this id already exists" });
       }
       const admin = new Admin({
         id,
@@ -45,7 +45,7 @@ export const signup = async (req, res) => {
     } else if (type === "lecturer") {
       const exist = await Lecturer.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Lecturer already exists" });
+        return res.status(400).json({ message: "Lecturer with this id already exists" });
       }
       const lecturer = new Lecturer({
         id,
@@ -58,17 +58,14 @@ export const signup = async (req, res) => {
       res
         .status(201)
         .json({ message: "Lecturer created successfully", data: result });
+    } else {
+      return res.status(400).json({ message: "Invalid user type" });
     }
-    else {
-  return res.status(400).json({ message: "Invalid user type" });
-}
   } catch (error) {
     console.log("Error while signing up user");
     console.log(error.message);
   }
 };
-
-
 
 export const login = async (req, res) => {
   try {
@@ -138,6 +135,17 @@ export const me = async (req, res) => {
     res.status(200).json({ message: "User found", data: user });
   } catch (error) {
     console.log("Error while getting user");
+    console.log(error.message);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+export const logout = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    console.log("Error while logging out user");
     console.log(error.message);
     return res.status(500).json({ message: "Internal Server Error" });
   }
