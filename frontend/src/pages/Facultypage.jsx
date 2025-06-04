@@ -6,6 +6,7 @@ import { getAllStudents } from '../services/libs.js';
 import { FaUserCircle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { addMarks } from '../services/libs.js';
+import Markspage from './Markspage.jsx';
 
 function Facultypage({ setUser }) {
   const facultyData = {
@@ -19,6 +20,7 @@ function Facultypage({ setUser }) {
   const [studentId, setStudentId] = useState(
     JSON.parse(localStorage.getItem('studentDetails')) || []
   );
+  const[getmarksbutton,setGetmarksbutton]=useState(false)
   const [branchFilter, setBranchFilter] = useState('');
   const [yearFilter, setYearFilter] = useState('');
   const [rollFilter, setRollFilter] = useState('');
@@ -108,6 +110,8 @@ function Facultypage({ setUser }) {
   return (
     <div className={styles.main}>
       <Navbar>
+        <button className={styles.fetchmarks} onClick={()=>setGetmarksbutton(true)}>Get Marks</button>
+
         <button
           className={styles.profile}
           onClick={() => navigate('profile')}
@@ -119,7 +123,9 @@ function Facultypage({ setUser }) {
         </button>
       </Navbar>
 
-      <div className={styles.master}>
+      {getmarksbutton==false && <div className={styles.master}>
+
+
         <div className={styles.filter}>
           <select
             value={branchFilter}
@@ -268,7 +274,13 @@ function Facultypage({ setUser }) {
             </div>
           </div>
         )}
-      </div>
+      </div>}
+
+
+        {getmarksbutton && <Markspage />}
+
+
+
     </div>
   );
 }
