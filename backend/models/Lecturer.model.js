@@ -1,28 +1,31 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-const LecturerSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+const LecturerSchema = new mongoose.Schema(
+  {
+    id: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    subjects: [
+      {
+        type: String,
+      },
+    ],
+    type: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
-  name: {
-    type: String,
-    required: true
-  },
-  subjects: [
-    {
-      type: String
-    }
-  ],
-  type:{
-    type:String,
-    required:true
-  },
-  password:{
-    type:String,
-    required:true
-  }
-}, { timestamps: true });
+  { timestamps: true }
+);
 
 LecturerSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
@@ -32,5 +35,5 @@ LecturerSchema.pre("save", async function (next) {
   next();
 });
 
-const Lecturer = mongoose.model('Lecturer', LecturerSchema);
+const Lecturer = mongoose.model("Lecturer", LecturerSchema);
 export default Lecturer;

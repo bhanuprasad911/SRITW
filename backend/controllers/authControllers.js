@@ -11,7 +11,9 @@ export const signup = async (req, res) => {
     if (type === "student") {
       const exist = await Student.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Student with this id already exists" });
+        return res
+          .status(400)
+          .json({ message: "Student with this id already exists" });
       }
       const student = new Student({
         id,
@@ -30,7 +32,9 @@ export const signup = async (req, res) => {
     } else if (type === "admin") {
       const exist = await Admin.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Admin with this id already exists" });
+        return res
+          .status(400)
+          .json({ message: "Admin with this id already exists" });
       }
       const admin = new Admin({
         id,
@@ -45,7 +49,9 @@ export const signup = async (req, res) => {
     } else if (type === "lecturer") {
       const exist = await Lecturer.findOne({ id });
       if (exist) {
-        return res.status(400).json({ message: "Lecturer with this id already exists" });
+        return res
+          .status(400)
+          .json({ message: "Lecturer with this id already exists" });
       }
       const lecturer = new Lecturer({
         id,

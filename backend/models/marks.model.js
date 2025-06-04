@@ -52,7 +52,6 @@ const StudentMarksSchema = new mongoose.Schema({
   cie82s: [String],
   cie82m: [Number],
 
-
   // SEE Exams (for 8 semesters)
   see1s: [String],
   see1m: [Number],
@@ -76,7 +75,7 @@ const StudentMarksSchema = new mongoose.Schema({
   see7m: [Number],
 
   see8s: [String],
-  see8m: [Number]
+  see8m: [Number],
 });
 
 const StudentMarks = mongoose.model("StudentMarks", StudentMarksSchema);

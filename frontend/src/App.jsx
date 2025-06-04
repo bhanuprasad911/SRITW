@@ -8,8 +8,7 @@ import Facultypage from "./pages/Facultypage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import StudentPage from "./pages/StudentPage.jsx";
 import { getAuthUser } from "./services/libs.js";
-import toast, { Toaster } from 'react-hot-toast';
-
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [currentAdmin, setCurrentAdmin] = useState(() => {
@@ -38,7 +37,7 @@ function App() {
 
   return (
     <div className={styles.main}>
-    <Toaster />
+      <Toaster />
       <Routes>
         <Route
           path="/"
@@ -49,7 +48,7 @@ function App() {
               ) : currentAdmin.type === "lecturer" ? (
                 <Facultypage setUser={setCurrentAdmin} />
               ) : currentAdmin.type === "student" ? (
-                <StudentPage />
+                <StudentPage setUser={setCurrentAdmin} />
               ) : (
                 <Homepage />
               )
@@ -61,7 +60,13 @@ function App() {
 
         <Route
           path="/login"
-          element={!current ? <Login setUser ={setCurrentAdmin} /> : <Navigate to="/" replace />}
+          element={
+            !current ? (
+              <Login setUser={setCurrentAdmin} />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
         />
 
         <Route

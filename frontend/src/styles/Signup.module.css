@@ -1,116 +1,114 @@
-.main{
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
   width: 100%;
-    background: url('../assets/backgroumd.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+  background: url("../assets/backgroumd.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.master{
-    display: flex;
-    background-color: white;
-    flex-direction: column;
-    width: 35%;
-    height: 73%;
-    padding: 30px;
-    gap: 25px;
-    border-radius: 20px;
+.master {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 35%;
+  height: 73%;
+  padding: 30px;
+  gap: 25px;
+  border-radius: 20px;
 }
-.master > select{
-    border: 2px solid gray;
-    padding: 7px;
-    border-radius: 8px;
-    
-}
-
-.master > input{
-    border: 2px solid gray;
-    padding: 7px;
-    border-radius: 8px;
+.master > select {
+  border: 2px solid gray;
+  padding: 7px;
+  border-radius: 8px;
 }
 
-.logo{
-    background-color: white;
-    width: 100%;
-    height: 20%;
-
-}
-.signupCaption{
-    text-align: center;
-    color: rgb(92, 92, 92);
+.master > input {
+  border: 2px solid gray;
+  padding: 7px;
+  border-radius: 8px;
 }
 
-.signUp{
-    padding: 8px;
-    color: white;
-    background-color: green;
-    border-radius: 10px;
+.logo {
+  background-color: white;
+  width: 100%;
+  height: 20%;
 }
-.signUp:hover{
-    cursor: pointer;
-}
-.batchbranch{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-direction: row; 
-    justify-content: space-around;
-    gap: 1%;
-}
-.yearsem{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-direction: row; 
-    gap: 1%;
-    
-}
-.batchbranch > select{
-    border: 2px solid gray;
-    padding: 7px;
-    border-radius: 8px;
-    width: 50%;
-}
-.yearsem > select{
-    border: 2px solid gray;
-    padding: 7px;
-    border-radius: 8px;
-    width: 50%;
+.signupCaption {
+  text-align: center;
+  color: rgb(92, 92, 92);
 }
 
-@media screen and (max-width:500px){
-    .master{
-        width: 85%;
-        height: 70%;
-    }
-    
+.signUp {
+  padding: 8px;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+}
+.signUp:hover {
+  cursor: pointer;
+}
+.batchbranch {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1%;
+}
+.yearsem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-direction: row;
+  gap: 1%;
+}
+.batchbranch > select {
+  border: 2px solid gray;
+  padding: 7px;
+  border-radius: 8px;
+  width: 50%;
+}
+.yearsem > select {
+  border: 2px solid gray;
+  padding: 7px;
+  border-radius: 8px;
+  width: 50%;
+}
+.error {
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  color: red;
 }
 
-@media screen and (min-width:501px) and (max-width:700px){
-    .master{
-        width: 65%;
-        height: 82%;
-    }
-    
+@media screen and (max-width: 500px) {
+  .master {
+    width: 85%;
+    height: 70%;
+  }
 }
 
-@media screen and (min-width:701px) and (max-width:1000px){
-    .master{
-        width: 60%;
-        height: 82%;
-    }
-    
+@media screen and (min-width: 501px) and (max-width: 700px) {
+  .master {
+    width: 65%;
+    height: 82%;
+  }
 }
 
-@media screen and (min-width:1001px) and (max-width:1250px){
-    .master{
-        width: 45%;
-        height: 82%;
-    }
-    
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+  .master {
+    width: 60%;
+    height: 82%;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1250px) {
+  .master {
+    width: 45%;
+    height: 82%;
+  }
 }

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { getStudentMarks } from '../services/libs.js';
-import styles from '../styles/MarksPage.module.css';
+import React, { useEffect, useState } from "react";
+import { getStudentMarks } from "../services/libs.js";
+import styles from "../styles/MarksPage.module.css";
 
 function Markspage({ id }) {
   const [marks, setMarks] = useState({});
@@ -29,7 +29,7 @@ function Markspage({ id }) {
     const tables = [];
 
     for (let key in marks) {
-      if (key.endsWith('s')) {
+      if (key.endsWith("s")) {
         const baseKey = key.slice(0, -1); // 'cie11', 'see8', etc.
         const subjects = marks[`${baseKey}s`];
         const scores = marks[`${baseKey}m`];
@@ -51,7 +51,7 @@ function Markspage({ id }) {
                     <tr key={index}>
                       <td>{subject}</td>
                       <td>{scores[index]}</td>
-                      <td>{baseKey.startsWith('c')?20:100}</td>
+                      <td>{baseKey.startsWith("c") ? 20 : 100}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -67,9 +67,12 @@ function Markspage({ id }) {
 
   return (
     <div className={styles.main}>
-      <h1 className={styles.heading}>Sumathi Reddy Institute Of Technology For Women</h1>
+      <h1 className={styles.heading}>
+        Sumathi Reddy Institute Of Technology For Women
+      </h1>
       <p className={styles.tag}>Hasanparthy, Telangana</p>
-      <br /><br />
+      <br />
+      <br />
       <div className={styles.userDetails}>
         <input type="text" value={id.id} readOnly />
         <input type="text" value={id.name} readOnly />
@@ -79,9 +82,7 @@ function Markspage({ id }) {
         <input type="text" value={id.batch} readOnly />
       </div>
 
-      <div className={styles.tablesContainer}>
-        {renderTables()}
-      </div>
+      <div className={styles.tablesContainer}>{renderTables()}</div>
     </div>
   );
 }
