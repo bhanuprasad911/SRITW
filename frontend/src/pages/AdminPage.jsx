@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import styles from '../styles/Adminpage.module.css';
-import { addMarks, getAllStudents, getAuthUser } from '../services/libs.js';
+import { addMarks, getAllStudents, getAuthUser, logout } from '../services/libs.js';
 import { FaUserCircle } from "react-icons/fa";
 import AddProfile from '../components/AddProfile.jsx';
 import toast from 'react-hot-toast';
+import Markspage from '../components/Markspage.jsx';
+
 
 
 function AdminPage({ setUser }) {
@@ -45,7 +47,8 @@ function AdminPage({ setUser }) {
     getData();
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
+    await logout()
     setUser(null);
     localStorage.removeItem('currentUser');
   };
@@ -240,6 +243,7 @@ const payload = {
                 setSubject('');
               }}>Cancel</button>
             </div>
+            <Markspage id={selected}/>
           </div>
         )}
 

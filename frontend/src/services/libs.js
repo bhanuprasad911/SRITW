@@ -26,3 +26,11 @@ export const addMarks = async(data)=>{
   const response = await axiosInstance.post("/marks/add",data);
   return response;
 }
+export const getStudentMarks = async(id)=>{
+  const response = await axiosInstance.get(`/marks/${id}`);
+  return response;
+}
+export const getStudentDetails = async(id)=>{
+  const response = await axiosInstance.get(`/student/${id}`);
+  return response;
+}

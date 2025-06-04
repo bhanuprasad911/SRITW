@@ -1,0 +1,92 @@
+.main {
+    width: 100%;
+    border: 1px solid black;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(95, 51, 64);
+}
+
+.userDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4%;
+}
+
+.userDetails > input {
+    padding: 1rem;
+    font-size: large;
+    background-color: rgb(95, 51, 64);
+    margin-top: 3px;
+    color: rgb(243, 241, 241);
+    width: 48%;
+}
+.heading{
+    font-size: clamp(1.5rem, 5vw, 4rem);
+
+    background:linear-gradient( purple, purple, black);
+    -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+
+}
+.tag{
+    font-size:xx-large
+
+}
+
+/* 🔽 New styles for marks table section */
+.tablesContainer {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 10%;
+    background: nonex;
+}
+
+.tableSection {
+    margin-bottom: 2rem;
+    /* border: 2px solid rgb(95, 51, 64); */
+    padding: 1rem   ;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
+}
+
+.tableTitle {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(95, 51, 64);
+    text-transform: uppercase;
+}
+
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    text-align: left;
+    width: 10%; /* 🎯 Fixed width for all cells */
+    word-wrap: break-word; /* Ensures long text wraps */
+    white-space: normal;   /* Allows wrapping */
+}
+
+
+.table th {
+    background-color: rgb(95, 51, 64);
+    color: white;
+}
+
+.table td {
+    background-color: #fff;
+}

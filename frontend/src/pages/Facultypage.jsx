@@ -2,19 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Faculty.module.css';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router';
-import { getAllStudents } from '../services/libs.js';
+import { getAllStudents, getAuthUser, logout } from '../services/libs.js';
 import { FaUserCircle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { addMarks } from '../services/libs.js';
-import Markspage from './Markspage.jsx';
+import Markspage from '../components/Markspage.jsx';
+
 
 function Facultypage({ setUser }) {
-  const facultyData = {
-    id: 'F12345',
-    name: 'Gampa Srujankumar',
-    type: 'faculty',
-    subjects: ['Data Structures', 'Operating Systems', 'Computer Networks'],
-  };
+    const [currentFaculty, setCurrentFaculty] = useState({});
 
   const navigate = useNavigate();
   const [studentId, setStudentId] = useState(
@@ -33,6 +29,22 @@ function Facultypage({ setUser }) {
   const [seminput, setSeminput] = useState('');
   const [mark, setMark] = useState(0);
   const [total, setTotal] = useState(0);
+
+
+   useEffect(() => {
+      const getData = async () => {
+        try {
+          const [adminRes] = await Promise.all([
+            getAuthUser()
+          ]);
+          setCurrentFaculty(adminRes.data.data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      getData();
+    }, []);
 
   useEffect(() => {
     const cienames = 'cie' + seminput + cieinput + 's';
@@ -82,7 +94,9 @@ function Facultypage({ setUser }) {
     }
   }
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
+        await logout()
+  
     setUser(null);
     localStorage.removeItem('currentUser');
   };
@@ -110,17 +124,20 @@ function Facultypage({ setUser }) {
   return (
     <div className={styles.main}>
       <Navbar>
-        <button className={styles.fetchmarks} onClick={()=>setGetmarksbutton(true)}>Get Marks</button>
+        {
+          (typeof studentId === 'object' && !Array.isArray(studentId) && studentId !== null) &&(
+            <button className={styles.fetchmarks} onClick={()=>setGetmarksbutton(true)}>Get Marks</button>
+
+          )
+        }
 
         <button
           className={styles.profile}
           onClick={() => navigate('profile')}
         >
-          <FaUserCircle /> {facultyData.name}
+          <FaUserCircle /> {currentFaculty?.name}
         </button>
-        <button className={styles.navbutton} onClick={handleLogout}>
-          Logout
-        </button>
+        <button className={styles.navbutton} onClick={handleLogout}>Logout</button>
       </Navbar>
 
       {getmarksbutton==false && <div className={styles.master}>
@@ -234,7 +251,7 @@ function Facultypage({ setUser }) {
                 <div className={styles.facultyinput}>
                   <select onChange={(e) => setSubinput(e.target.value)}>
                     <option value="">Subject</option>
-                    {facultyData.subjects.map((subject, index) => (
+                    {currentFaculty?.subjects.map((subject, index) => (
                       <option value={subject} key={index}>
                         {subject}
                       </option>
@@ -277,7 +294,7 @@ function Facultypage({ setUser }) {
       </div>}
 
 
-        {getmarksbutton && <Markspage />}
+        {getmarksbutton && <Markspage id={studentId}/>}
 
 
 
