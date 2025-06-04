@@ -4,5 +4,7 @@ import authMiddleWare from '../middlewares/authMiddleware.js'
 const studentRouter = express.Router()
 
 studentRouter.get('/',getAllStudents)
+studentRouter.get('/:id',getAllStudents)
+
 
 export default studentRouter

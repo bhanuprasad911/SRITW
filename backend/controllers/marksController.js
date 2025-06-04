@@ -18,7 +18,8 @@ export const getMarksByStudent = async (req,res)=>{
 export const getMarksByLecturer = async (req,res)=>{
     try {
         const {id} = req.params;
-        const marks = await StudentMarks.find({lecturerId:id});
+        const marks = await StudentMarks.findOne({id});
+        console.log(marks)
         if(!marks){
             return res.status(404).json({message:"No marks found"})
         }
