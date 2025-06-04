@@ -1,7 +1,6 @@
 import Student from "../models/Student.model.js";
 
 export const getAllStudents = async (req, res) =>{
-    console.log('in student')
     try {
         const students = await Student.find().select('-password');
         return res.status(200).json(students);
