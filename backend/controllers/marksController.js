@@ -30,7 +30,9 @@ export const getMarksByLecturer = async (req,res)=>{
     }
 }
 
-export const addMarks = async (req, res) => {
+export const 
+
+ addMarks = async (req, res) => {
   try {
     const { id, data } = req.body;
 
