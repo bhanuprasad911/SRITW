@@ -183,3 +183,13 @@ tr,td{
   cursor: pointer;
   text-decoration: underline;
 }
+
+.fetchmarks{
+    width: max-content;
+    padding: 8px;
+    border-radius: 10px;
+}
+.fetchmarks:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
