@@ -49,8 +49,6 @@ export const
           : key.slice(0, -1) + 's';
 
         const value = data[key][0]; // single value array like ['Data Structures'] or [15]
-
-        // Check if the subject exists and update its corresponding mark
         if (isSubjectList) {
           if (!exist[key]) exist[key] = [];
           if (!exist[relatedKey]) exist[relatedKey] = [];
@@ -61,7 +59,7 @@ export const
             // you can skip or modify the subject name if needed
           } else {
             exist[key].push(value); // add new subject
-            exist[relatedKey].push(data[relatedKey][0]); // add corresponding mark
+            exist[relatedKey].push(data[relatedKey][0]);
           }
         } else if (isMarksList) {
           // skip because marks are handled with subject
@@ -80,5 +78,3 @@ export const
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
-

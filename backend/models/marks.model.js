@@ -28,6 +28,31 @@ const StudentMarksSchema = new mongoose.Schema({
   cie42s: [String],
   cie42m: [Number],
 
+  cie51s: [String],
+  cie51m: [Number],
+
+  cie52s: [String],
+  cie52m: [Number],
+
+  cie61s: [String],
+  cie61m: [Number],
+
+  cie62s: [String],
+  cie62m: [Number],
+
+  cie71s: [String],
+  cie71m: [Number],
+
+  cie72s: [String],
+  cie72m: [Number],
+
+  cie81s: [String],
+  cie81m: [Number],
+
+  cie82s: [String],
+  cie82m: [Number],
+
+
   // SEE Exams (for 8 semesters)
   see1s: [String],
   see1m: [Number],
