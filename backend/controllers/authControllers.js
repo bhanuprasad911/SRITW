@@ -7,7 +7,7 @@ const secret = process.env.SECRET;
 
 export const signup = async (req, res) => {
   try {
-    const { id, type, data } = req.body;
+    const { id, type='student', data } = req.body;
     if (type === "student") {
       const exist = await Student.findOne({ id });
       if (exist) {

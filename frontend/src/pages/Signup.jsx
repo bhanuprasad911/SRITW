@@ -8,8 +8,9 @@ import { useNavigate } from "react-router";
 
 function Signup() {
   const navigate = useNavigate();
+  const {id, setId} = useState('')
+  const [type, setType] = useState('student')
   const [formdata, setFormData] = useState({
-    id: "",
     name: "",
     branch: "",
     batch: "",
@@ -72,7 +73,13 @@ function Signup() {
   const handleSubmit = async () => {
     try {
       console.log(formdata);
-      const response = await signup(formdata);
+      const final = {
+        id:id,
+        type:type,
+        data:formdata
+      }
+      console.log(final)
+      const response = await signup(final);
       console.log(response);
       toast.success("signup successfull");
       navigate("/login");
